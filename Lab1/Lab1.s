@@ -9,7 +9,7 @@ str: .string "Hello world!"
     addi s0, s0, 0x100
 
     # Length of string
-    li a2 12
+    addi a2, a2, 12
 
     # Store str to the new address
 Loop:
@@ -21,11 +21,11 @@ Loop:
     addi a3, a3, 1    # next char
     beq x0, x0, Loop    # loop
 EndLoop:
-    li a3, 0    # reset the counter to 0
+    add a3, x0, x0    # reset the counter to 0
 
     # Print str in the new address
 
-    li a7, 11    # set system call to char mode
+    addi a7, a7, 11    # set system call to char mode
 Print:
     add s2, s0, a3
     lb a0, 0(s2)
@@ -35,4 +35,4 @@ Print:
     beq x0, x0, Print
     
 Exit:
-    nop
+    add a0, a0, x0
