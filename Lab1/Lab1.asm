@@ -2,32 +2,30 @@
 str: .string "Hello world!"
 
 .text
-    la a1, str
-    # lui a1, 0x10000
-    # lw a2, 48(a1)
+    lui a1, 0x10000
 
-    # Set the address in x22 as 0x10000100
+    # Set target address
     lui s0, 0x10000
     addi s0, s0, 0x100
 
-    addi a2, a2, 12
-    # sw a1, 48(s0)
+    # Length of string
+    li a2 12
 
-    # Store str in x22
+    # Store str to the new address
 Loop:
-    add s2, a3, a1
-    add s3, a3, s0
-    lw t0, 0(s2)
-    sw t0, 0(s3)
-    beq a3, a2, EndLoop
-    addi a3, a3, 1
-    beq x0, x0, Loop
+    add s2, a3, a1    # original address
+    lw t0, 0(s2)    # load one char from original str
+    add s2, a3, s0    # target address
+    sw t0, 0(s2)    # save to target address
+    beq a3, a2, EndLoop    # reach end of str
+    addi a3, a3, 1    # next char
+    beq x0, x0, Loop    # loop
 EndLoop:
-    li a3, 0
+    li a3, 0    # reset the counter to 0
 
-    # Print str
+    # Print str in the new address
 
-    li a7, 11
+    li a7, 11    # set system call to char mode
 Print:
     add s2, s0, a3
     lw a0, 0(s2)
