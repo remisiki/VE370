@@ -1,27 +1,119 @@
 .data
 arr: .word -12, -25, 0, 27, 3, -14, 48, 44, -13, 34, 8, -39, 46, -46, -8, 18, 41, -9, -40, -18, -45, -16, -10, -50, -30, -18, -37, -4, 2, 7, 20, 26
 
+str1: .string "Count of positive numbers is "
+str2: .string "Count of negative numbers is "
+str3: .string "Count of zero is "
+str4: .string "Sum of all numbers is "
+strn: .string "\n"
 .text
 main:
     addi s0, x0, 32
     lui s1, 0x10000
     add a1, x0, s1
     add a2, x0, s0
+    
+    lui s2, 0x10000
+    addi s2, s2, 0x80
+    addi s3, x0, 29
+    addi a7, x0, 11
+    printString1:
+        add t0, t1, s2
+        lb a0, 0(t0)
+        ecall
+        beq t1, s3, exitPrint1
+        addi t1, t1, 1
+        jal x0, printString1
+    exitPrint1:
     addi a3, x0, 1
     jal x1, countArray
     addi a7, x0, 1
     ecall
+    
+    addi s2, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0xe5
+    lb a0, 0(s2)
+    addi a7, x0, 11
+    ecall
+    
+    addi s2, x0, 0
+    addi t1, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0x9e
+    addi s3, x0, 29
+    addi a7, x0, 11
+    printString2:
+        add t0, t1, s2
+        lb a0, 0(t0)
+        ecall
+        beq t1, s3, exitPrint2
+        addi t1, t1, 1
+        jal x0, printString2
+    exitPrint2:
     addi a3, x0, -1
     jal x1, countArray
     addi a7, x0, 1
     ecall
+    
+    addi s2, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0xe5
+    lb a0, 0(s2)
+    addi a7, x0, 11
+    ecall
+    
+    addi s2, x0, 0
+    addi t1, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0xbc
+    addi s3, x0, 17
+    addi a7, x0, 11
+    printString3:
+        add t0, t1, s2
+        lb a0, 0(t0)
+        ecall
+        beq t1, s3, exitPrint3
+        addi t1, t1, 1
+        jal x0, printString3
+    exitPrint3:
     addi a3, x0, 0
     jal x1, countArray
     addi a7, x0, 1
     ecall
+    
+    addi s2, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0xe5
+    lb a0, 0(s2)
+    addi a7, x0, 11
+    ecall
+    
+    addi s2, x0, 0
+    addi t1, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0xce
+    addi s3, x0, 22
+    addi a7, x0, 11
+    printString4:
+        add t0, t1, s2
+        lb a0, 0(t0)
+        ecall
+        beq t1, s3, exitPrint4
+        addi t1, t1, 1
+        jal x0, printString4
+    exitPrint4:
     jal x1, sumArray
     addi a7, x0, 1
     ecall
+    
+    addi s2, x0, 0
+    lui s2, 0x10000
+    addi s2, s2, 0xe5
+    lb a0, 0(s2)
+    addi a7, x0, 11
+    ecall
+    
     jal x0, exit
     
 sumArray:
