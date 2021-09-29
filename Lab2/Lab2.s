@@ -6,13 +6,19 @@ str2: .string "Count of negative numbers is "
 str3: .string "Count of zero is "
 str4: .string "Sum of all numbers is "
 strn: .string "\n"
+
 .text
 main:
-    addi s0, x0, 32
-    lui s1, 0x10000
+    addi s0, x0, 32 # size of arr
+    lui s1, 0x10000 # address of arr
+
+    # parse function arguments
+    # a1: arr
+    # a2: sizeof(arr)
     add a1, x0, s1
     add a2, x0, s0
     
+    # print str1
     lui s2, 0x10000
     addi s2, s2, 0x80
     addi s3, x0, 29
@@ -25,11 +31,14 @@ main:
         addi t1, t1, 1
         jal x0, printString1
     exitPrint1:
+
+    # count positive numbers
     addi a3, x0, 1
     jal x1, countArray
     addi a7, x0, 1
     ecall
     
+    # newline
     addi s2, x0, 0
     lui s2, 0x10000
     addi s2, s2, 0xe5
@@ -37,6 +46,7 @@ main:
     addi a7, x0, 11
     ecall
     
+    # print str2
     addi s2, x0, 0
     addi t1, x0, 0
     lui s2, 0x10000
@@ -51,11 +61,14 @@ main:
         addi t1, t1, 1
         jal x0, printString2
     exitPrint2:
+
+    # count negative numbers
     addi a3, x0, -1
     jal x1, countArray
     addi a7, x0, 1
     ecall
     
+    #newline
     addi s2, x0, 0
     lui s2, 0x10000
     addi s2, s2, 0xe5
@@ -63,6 +76,7 @@ main:
     addi a7, x0, 11
     ecall
     
+    #print str3
     addi s2, x0, 0
     addi t1, x0, 0
     lui s2, 0x10000
@@ -77,11 +91,14 @@ main:
         addi t1, t1, 1
         jal x0, printString3
     exitPrint3:
+
+    #count zeroes
     addi a3, x0, 0
     jal x1, countArray
     addi a7, x0, 1
     ecall
     
+    #newline
     addi s2, x0, 0
     lui s2, 0x10000
     addi s2, s2, 0xe5
@@ -89,6 +106,7 @@ main:
     addi a7, x0, 11
     ecall
     
+    # print str4
     addi s2, x0, 0
     addi t1, x0, 0
     lui s2, 0x10000
@@ -103,10 +121,13 @@ main:
         addi t1, t1, 1
         jal x0, printString4
     exitPrint4:
+
+    #calculate sum
     jal x1, sumArray
     addi a7, x0, 1
     ecall
     
+    # newline
     addi s2, x0, 0
     lui s2, 0x10000
     addi s2, s2, 0xe5
@@ -114,8 +135,12 @@ main:
     addi a7, x0, 11
     ecall
     
+    # exit
     jal x0, exit
     
+# REQUIRE: a1 holds array address,
+#          a2 holds size of array
+# EFFECT: return sum of the array in a0
 sumArray:
     addi a0, x0, 0
     addi t1, x0, 0
@@ -131,17 +156,28 @@ sumArray:
     exitLoopSum:
         jalr x0, x1, 0
 
+# REQUIRE: a1 holds array address,
+#          a2 holds size of array,
+#          a3 holds counting type
+#             (0: zero, 1: positive, -1: negative)
+# EFFECT: return number of counts in a0
 countArray:
     addi a0, x0, 0
     addi t1, x0, 0
     loopCnt:
         bge t1, a2, exitCountArray
+
+        # load an element from arr
         slli t2, t1, 2
         add t2, t2, a1
         lw t3, 0(t2)
+
+        # create stack
         addi sp, sp, -8
         sw x1, 4(sp)
         sw a0, 0(sp)
+
+        # select counting type
         add a0, x0, t3
         addi t0, x0, 1
         beq a3, t0, checkIfPos
@@ -149,6 +185,8 @@ countArray:
         beq a3, t0, checkIfNeg
         addi t0, x0, 0
         beq a3, t0, checkIfZero
+
+        # judge data
         checkIfPos:
             jal x1, isPos
             jal x0, exitBranch
@@ -159,22 +197,35 @@ countArray:
             jal x1, isZero
             jal x0, exitBranch
         exitBranch:
-        beq a0, x0, skipCnt
-        lw a0, 0(sp)
+        beq a0, x0, skipCnt # Skip if not match
+
+        # count
+        lw a0, 0(sp) # restore a0 from stack
         addi a0, a0, 1
         addi t1, t1, 1
+
+        # free all stack space
         lw x1, 4(sp)
         addi sp, sp, 8
+
         jal x0, loopCnt
+
         skipCnt:
-        addi t1, t1, 1
-        lw a0, 0(sp)
-        lw x1, 4(sp)
-        addi sp, sp, 8
-        jal x0, loopCnt
+            addi t1, t1, 1
+
+            # free all stack space
+            lw a0, 0(sp)
+            lw x1, 4(sp)
+            addi sp, sp, 8
+
+            jal x0, loopCnt
+
+    # return
     exitCountArray:
         jalr x0, x1, 0
 
+# REQUIRE: a0 holds an int
+# EFFECT: if a0 is positive, return 1 in a0, else return 0
 isPos:
     bgt a0, x0, isPosTrue
     addi a0, x0, 0
@@ -183,6 +234,8 @@ isPos:
         addi a0, x0, 1
         jalr x0, x1, 0
 
+# REQUIRE: a0 holds an int
+# EFFECT: if a0 is negative, return 1 in a0, else return 0
 isNeg:
     blt a0, x0, isNegTrue
     addi a0, x0, 0
@@ -190,7 +243,9 @@ isNeg:
     isNegTrue:
         addi a0, x0, 1
         jalr x0, x1, 0
-        
+
+# REQUIRE: a0 holds an int
+# EFFECT: if a0 equals to 0, return 1 in a0, else return 0    
 isZero:
     beq a0, x0, isZeroTrue
     addi a0, x0, 0
@@ -200,5 +255,4 @@ isZero:
         jalr x0, x1, 0
 
 exit:
-    addi a0, x0, 0
-    addi x0, x0, 0
+    addi a0, x0, 0 # return 0
