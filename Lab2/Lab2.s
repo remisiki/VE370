@@ -40,67 +40,73 @@ sumArray:
         jalr x0, x1, 0
 
 countArray:
-    addi t0, x0, 1
-    beq a3, t0, posCnt
-    jal x0, elseCheckNeg
-    elseCheckNeg:
+    addi a0, x0, 0
+    addi t1, x0, 0
+    loopCnt:
+        bge t1, a2, exitCountArray
+        slli t2, t1, 2
+        add t2, t2, a1
+        lw t3, 0(t2)
+        addi sp, sp, -8
+        sw x1, 4(sp)
+        sw a0, 0(sp)
+        add a0, x0, t3
+        addi t0, x0, 1
+        beq a3, t0, checkIfPos
         addi t0, x0, -1
-        beq a3, t0, negCnt
-        jal x0, elseCheckZero
-    elseCheckZero:
-        add t0, x0, x0
-        beq a3, t0, zeroCnt
-        jal x0, exitCountArray
-    posCnt:
-        addi a0, x0, 0
-        addi t1, x0, 0
-        loopPosCnt:
-            bge t1, a2, exitLoopPosCnt
-            slli t2, t1, 2
-            add t2, t2, a1
-            lw t3, 0(t2)
-            ble t3, x0, skipPosCnt
-            addi a0, a0, 1
-            skipPosCnt:
-            addi t1, t1, 1
-            jal x0, loopPosCnt
-            
-        exitLoopPosCnt:
-            jal x0, exitCountArray
-    negCnt:
-        addi a0, x0, 0
-        addi t1, x0, 0
-        loopNegCnt:
-            bge t1, a2, exitLoopPosCnt
-            slli t2, t1, 2
-            add t2, t2, a1
-            lw t3, 0(t2)
-            bge t3, x0, skipNegCnt
-            addi a0, a0, 1
-            skipNegCnt:
-            addi t1, t1, 1
-            jal x0, loopNegCnt
-            
-        exitLoopNegCnt:
-            jal x0, exitCountArray
-    zeroCnt:
-        addi a0, x0, 0
-        addi t1, x0, 0
-        loopZeroCnt:
-            bge t1, a2, exitLoopZeroCnt
-            slli t2, t1, 2
-            add t2, t2, a1
-            lw t3, 0(t2)
-            bne t3, x0, skipZeroCnt
-            addi a0, a0, 1
-            skipZeroCnt:
-            addi t1, t1, 1
-            jal x0, loopZeroCnt
-            
-        exitLoopZeroCnt:
-            jal x0, exitCountArray
+        beq a3, t0, checkIfNeg
+        addi t0, x0, 0
+        beq a3, t0, checkIfZero
+        checkIfPos:
+            jal x1, isPos
+            jal x0, exitBranch
+        checkIfNeg:
+            jal x1, isNeg
+            jal x0, exitBranch
+        checkIfZero:
+            jal x1, isZero
+            jal x0, exitBranch
+        exitBranch:
+        beq a0, x0, skipCnt
+        lw a0, 0(sp)
+        addi a0, a0, 1
+        addi t1, t1, 1
+        lw x1, 4(sp)
+        addi sp, sp, 8
+        jal x0, loopCnt
+        skipCnt:
+        addi t1, t1, 1
+        lw a0, 0(sp)
+        lw x1, 4(sp)
+        addi sp, sp, 8
+        jal x0, loopCnt
     exitCountArray:
         jalr x0, x1, 0
- 
+
+isPos:
+    bgt a0, x0, isPosTrue
+    addi a0, x0, 0
+    jalr x0, x1, 0
+    isPosTrue:
+        addi a0, x0, 1
+        jalr x0, x1, 0
+
+isNeg:
+    blt a0, x0, isNegTrue
+    addi a0, x0, 0
+    jalr x0, x1, 0
+    isNegTrue:
+        addi a0, x0, 1
+        jalr x0, x1, 0
+        
+isZero:
+    beq a0, x0, isZeroTrue
+    addi a0, x0, 0
+    jalr x0, x1, 0
+    isZeroTrue:
+        addi a0, x0, 1
+        jalr x0, x1, 0
+
 exit:
+    addi a0, x0, 0
     addi x0, x0, 0
