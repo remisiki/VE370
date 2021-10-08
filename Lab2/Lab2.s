@@ -1,5 +1,5 @@
 .data
-arr: .word -12, -25, 0, 27, 3, -14, 48, 44, -13, 34, 8, -39, 46, -46, -8, 18, 41, -9, -40, -18, -45, -16, -10, -50, -30, -18, -37, -4, 2, 7, 20, 26
+arr: .word 47,40,4,48,0,0,21,26,0,-18,26,0,0,-46,27,32,-45,-19,0,41,0,14,-21,28,-37,0,38,21,0,-18,0,0,0,-12,18,-39,-29,26,0,-1
 
 str1: .string "Count of positive numbers is "
 str2: .string "Count of negative numbers is "
@@ -9,7 +9,7 @@ strn: .string "\n"
 
 .text
 main:
-    addi s0, x0, 32 # size of arr
+    addi s0, x0, 40 # size of arr
     lui s1, 0x10000 # address of arr
 
     # parse function arguments
@@ -20,7 +20,7 @@ main:
     
     # print str1
     lui s2, 0x10000
-    addi s2, s2, 0x80
+    addi s2, s2, 0xa0
     addi s3, x0, 29
     addi a7, x0, 11
     printString1:
@@ -37,11 +37,12 @@ main:
     jal x1, countArray
     addi a7, x0, 1
     ecall
+    add s4, a0, x0 # save posCnt to s4
     
     # newline
     addi s2, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0xe5
+    addi s2, s2, 0x105
     lb a0, 0(s2)
     addi a7, x0, 11
     ecall
@@ -50,7 +51,7 @@ main:
     addi s2, x0, 0
     addi t1, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0x9e
+    addi s2, s2, 0xbe
     addi s3, x0, 29
     addi a7, x0, 11
     printString2:
@@ -67,11 +68,12 @@ main:
     jal x1, countArray
     addi a7, x0, 1
     ecall
+    add s5, a0, x0 # save negCnt to s5
     
     #newline
     addi s2, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0xe5
+    addi s2, s2, 0x105
     lb a0, 0(s2)
     addi a7, x0, 11
     ecall
@@ -80,7 +82,7 @@ main:
     addi s2, x0, 0
     addi t1, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0xbc
+    addi s2, s2, 0xdc
     addi s3, x0, 17
     addi a7, x0, 11
     printString3:
@@ -97,11 +99,12 @@ main:
     jal x1, countArray
     addi a7, x0, 1
     ecall
+    add s6, a0, x0 # save zeroCnt to s6
     
     #newline
     addi s2, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0xe5
+    addi s2, s2, 0x105
     lb a0, 0(s2)
     addi a7, x0, 11
     ecall
@@ -110,7 +113,7 @@ main:
     addi s2, x0, 0
     addi t1, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0xce
+    addi s2, s2, 0xee
     addi s3, x0, 22
     addi a7, x0, 11
     printString4:
@@ -126,11 +129,12 @@ main:
     jal x1, sumArray
     addi a7, x0, 1
     ecall
+    add s7, a0, x0 # save sum to s7
     
     # newline
     addi s2, x0, 0
     lui s2, 0x10000
-    addi s2, s2, 0xe5
+    addi s2, s2, 0x105
     lb a0, 0(s2)
     addi a7, x0, 11
     ecall
