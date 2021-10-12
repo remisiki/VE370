@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2021/10/12 21:58:54
+// Create Date: 2021/10/12 22:39:14
 // Design Name: 
-// Module Name: InstrMem
+// Module Name: PC
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,15 +20,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module InstrMem(
-    input [31:0] PC,
-    output [31:0] instruction
-
+module PC(
+    input clk,
+    input [31:0] pc_next,
+    output reg [31:0] pc_current
 );
-    reg [31:0] memori_instr [5:0];
-    integer i;
     initial begin
-        $readmemb("./instructions.prog", memori_instr);
+        pc_current = 32'b0;
     end
-    assign instruction = memori_instr[PC];
-endmodule: InstrMem
+    always @(posedge clk) begin
+        pc_current = pc_next;
+    end
+endmodule : PC
+
+module nextPC (
+    input [31:0] pc_current,
+    output [31:0] pc_next
+    
+);
+    assign pc_next = pc_current + 1;
+endmodule : nextPC
