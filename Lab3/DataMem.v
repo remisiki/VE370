@@ -42,7 +42,7 @@ module DataMem(
             $fwrite(f, "\tmemory[%d] = %d\n", i, memori[i]);
         $fclose(f);
         if (write_en)
-            memori[write_addr] = write_data;
+            memori[write_addr >> 2] = write_data;
     end
-    assign read_data = memori[read_addr];
+    assign read_data = memori[read_addr >> 2];
 endmodule : DataMem
