@@ -45,4 +45,4 @@ module DataMem(
             memori[write_addr] = write_data;
     end
     assign read_data = memori[read_addr];
-endmodule
+endmodule : DataMem
