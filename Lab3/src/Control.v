@@ -158,9 +158,8 @@ module Mux32bit (
     input [31:0] a,
     input [31:0] b,
     input sel,
-    output reg [31:0] out
+    output [31:0] out
     
 );
-    always @(*)
-        out = (sel)? b: a;
+    assign out = (sel)? b: a;
 endmodule : Mux32bit
