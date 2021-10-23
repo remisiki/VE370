@@ -1,627 +1,171 @@
-time =                   10
-	memory[          0] =          x
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   20
-	memory[          0] =          x
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   30
-	memory[          0] =          x
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   40
-	memory[          0] =          x
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   50
-	memory[          0] =          x
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   60
-	memory[          0] =          x
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   70
-	memory[          0] = 4294967294
-	memory[          1] =          x
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   80
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                   90
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  100
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  110
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  120
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  130
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  140
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  150
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  160
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  170
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  180
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
-time =                  190
-	memory[          0] = 4294967294
-	memory[          1] = 4294967286
-	memory[          2] =          x
-	memory[          3] =          x
-	memory[          4] =          x
-	memory[          5] =          x
-	memory[          6] =          x
-	memory[          7] =          x
-	memory[          8] =          x
-	memory[          9] =          x
-	memory[         10] =          x
-	memory[         11] =          x
-	memory[         12] =          x
-	memory[         13] =          x
-	memory[         14] =          x
-	memory[         15] =          x
-	memory[         16] =          x
-	memory[         17] =          x
-	memory[         18] =          x
-	memory[         19] =          x
-	memory[         20] =          x
-	memory[         21] =          x
-	memory[         22] =          x
-	memory[         23] =          x
-	memory[         24] =          x
-	memory[         25] =          x
-	memory[         26] =          x
-	memory[         27] =          x
-	memory[         28] =          x
-	memory[         29] =          x
-	memory[         30] =          x
-	memory[         31] =          x
+time =  10ns
+	memory[ 0] = x 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  20ns
+	memory[ 0] = x 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  30ns
+	memory[ 0] = x 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  40ns
+	memory[ 0] = x 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  50ns
+	memory[ 0] = x 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  60ns
+	memory[ 0] = x 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  70ns
+	memory[ 0] = 4294967294 	memory[ 1] = x 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  80ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time =  90ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 100ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 110ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 120ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 130ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 140ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 150ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 160ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 170ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 180ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 
+time = 190ns
+	memory[ 0] = 4294967294 	memory[ 1] = 4294967286 	memory[ 2] = x 	memory[ 3] = x 
+	memory[ 4] = x 	memory[ 5] = x 	memory[ 6] = x 	memory[ 7] = x 
+	memory[ 8] = x 	memory[ 9] = x 	memory[10] = x 	memory[11] = x 
+	memory[12] = x 	memory[13] = x 	memory[14] = x 	memory[15] = x 
+	memory[16] = x 	memory[17] = x 	memory[18] = x 	memory[19] = x 
+	memory[20] = x 	memory[21] = x 	memory[22] = x 	memory[23] = x 
+	memory[24] = x 	memory[25] = x 	memory[26] = x 	memory[27] = x 
+	memory[28] = x 	memory[29] = x 	memory[30] = x 	memory[31] = x 

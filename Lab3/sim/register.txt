@@ -1,627 +1,171 @@
-time =                   10
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] =          0
-	register[          6] =          0
-	register[          7] =          0
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] =          0
-	register[         30] =          0
-	register[         31] =          0
-time =                   20
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] =          0
-	register[          7] =          0
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] =          0
-	register[         30] =          0
-	register[         31] =          0
-time =                   30
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =          0
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] =          0
-	register[         30] =          0
-	register[         31] =          0
-time =                   40
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] =          0
-	register[         30] =          0
-	register[         31] =          0
-time =                   50
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] =          0
-	register[         30] =          0
-	register[         31] =          0
-time =                   60
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967294
-	register[         30] =          0
-	register[         31] =          0
-time =                   70
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967294
-	register[         30] =          0
-	register[         31] =          0
-time =                   80
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967294
-	register[         30] =          0
-	register[         31] =          0
-time =                   90
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967294
-	register[         30] =          0
-	register[         31] =          0
-time =                  100
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  110
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  120
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] =          0
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  130
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] = 4294967294
-	register[          9] =          0
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  140
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] = 4294967294
-	register[          9] = 4294967286
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  150
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] = 4294967294
-	register[          9] = 4294967294
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  160
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         10
-	register[          8] = 4294967294
-	register[          9] = 4294967294
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  170
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         20
-	register[          8] = 4294967294
-	register[          9] = 4294967294
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  180
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         20
-	register[          8] = 4294967294
-	register[          9] = 4294967294
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
-time =                  190
-	register[          0] =          0
-	register[          1] =          0
-	register[          2] =          0
-	register[          3] =          0
-	register[          4] =          0
-	register[          5] = 4294967286
-	register[          6] = 4294967276
-	register[          7] =         20
-	register[          8] = 4294967294
-	register[          9] = 4294967294
-	register[         10] =          0
-	register[         11] =          0
-	register[         12] =          0
-	register[         13] =          0
-	register[         14] =          0
-	register[         15] =          0
-	register[         16] =          0
-	register[         17] =          0
-	register[         18] =          0
-	register[         19] =          0
-	register[         20] =          0
-	register[         21] =          0
-	register[         22] =          0
-	register[         23] =          0
-	register[         24] =          0
-	register[         25] =          0
-	register[         26] =          0
-	register[         27] =          0
-	register[         28] =          0
-	register[         29] = 4294967276
-	register[         30] =          0
-	register[         31] =          0
+time =  10
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] =  0 	register[ 6] =  0 	register[ 7] =  0 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] =  0 	register[30] =  0 	register[31] =  0 
+time =  20
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] =  0 	register[ 7] =  0 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] =  0 	register[30] =  0 	register[31] =  0 
+time =  30
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] =  0 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] =  0 	register[30] =  0 	register[31] =  0 
+time =  40
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] =  0 	register[30] =  0 	register[31] =  0 
+time =  50
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] =  0 	register[30] =  0 	register[31] =  0 
+time =  60
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967294 	register[30] =  0 	register[31] =  0 
+time =  70
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967294 	register[30] =  0 	register[31] =  0 
+time =  80
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967294 	register[30] =  0 	register[31] =  0 
+time =  90
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967294 	register[30] =  0 	register[31] =  0 
+time = 100
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 110
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 120
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] =  0 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 130
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] = 4294967294 	register[ 9] =  0 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 140
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] = 4294967294 	register[ 9] = 4294967286 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 150
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] = 4294967294 	register[ 9] = 4294967294 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 160
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 10 
+	register[ 8] = 4294967294 	register[ 9] = 4294967294 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 170
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 20 
+	register[ 8] = 4294967294 	register[ 9] = 4294967294 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 180
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 20 
+	register[ 8] = 4294967294 	register[ 9] = 4294967294 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
+time = 190
+	register[ 0] =  0 	register[ 1] =  0 	register[ 2] =  0 	register[ 3] =  0 
+	register[ 4] =  0 	register[ 5] = 4294967286 	register[ 6] = 4294967276 	register[ 7] = 20 
+	register[ 8] = 4294967294 	register[ 9] = 4294967294 	register[10] =  0 	register[11] =  0 
+	register[12] =  0 	register[13] =  0 	register[14] =  0 	register[15] =  0 
+	register[16] =  0 	register[17] =  0 	register[18] =  0 	register[19] =  0 
+	register[20] =  0 	register[21] =  0 	register[22] =  0 	register[23] =  0 
+	register[24] =  0 	register[25] =  0 	register[26] =  0 	register[27] =  0 
+	register[28] =  0 	register[29] = 4294967276 	register[30] =  0 	register[31] =  0 
