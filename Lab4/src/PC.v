@@ -33,25 +33,36 @@ module PC(
     end
 endmodule : PC
 
-module BranchPC (
+module AlterPC (
     input [31:0] pc_current,
     input [31:0] immediate,
-    output [31:0] branch_destination
+    output [31:0] pc_destination
     
 );
-    assign branch_destination = pc_current + (immediate >> 1);
-endmodule : BranchPC
+    assign pc_destination = pc_current + (immediate >> 1);
+endmodule : AlterPC
 
 module SelPC (
     input zero,
-    input bne,
+    input lt_zero,
+    input [1:0] bType,
     input branch,
     output reg pcSrc
     
 );
     initial pcSrc = 1'b0;
     always @ (*) begin
-        pcSrc = (bne)? (branch & ~zero): (branch & zero);
+        case (bType)
+            2'b00:
+                pcSrc = branch & zero;
+            2'b01:
+                pcSrc = branch & ~zero;
+            2'b10:
+                pcSrc = branch & ~lt_zero;
+            2'b11:
+                pcSrc = branch & lt_zero;
+            default : pcSrc = 0;
+        endcase
     end
 endmodule : SelPC
 

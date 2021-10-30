@@ -25,7 +25,8 @@ module ALU(
     input signed [31:0] b,
     input [3:0] ALUctrl,
     output zero,
-    output reg [31:0] result
+    output lt_zero,
+    output reg signed [31:0] result
 
 );
     always @(*) begin
@@ -41,5 +42,6 @@ module ALU(
         endcase
 
     end
-    assign zero = (result == 32'b0)? 1'b1: 1'b0;
+    assign zero = (result == 0);
+    assign lt_zero = (result < 0);
 endmodule

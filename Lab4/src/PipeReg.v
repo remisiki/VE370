@@ -116,8 +116,10 @@ module EX_MEM (
     output reg [31:0] branch_destination_out,
     input zero_in,
     output reg zero_out,
-    input bne_in,
-    output reg bne_out,
+    input lt_zero_in,
+    output reg lt_zero_out,
+    input [1:0] bType_in,
+    output reg [1:0] bType_out,
     input asByte_in,
     output reg asByte_out,
     input asUnsigned_in,
@@ -141,7 +143,8 @@ module EX_MEM (
         pc_out  <= pc_in;
         branch_destination_out <= branch_destination_in;
         zero_out <= zero_in;
-        bne_out <= bne_in;
+        lt_zero_out <= lt_zero_in;
+        bType_out <= bType_in;
         asByte_out <= asByte_in;
         asUnsigned_out <= asUnsigned_in;
         ALU_result_out <= ALU_result_in;

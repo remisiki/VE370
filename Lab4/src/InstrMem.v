@@ -25,7 +25,7 @@ module InstrMem(
     output [31:0] instruction
 
 );
-    reg [31:0] memori_instr [55:0];
+    reg [31:0] memori_instr [86:0];
     initial begin
         $readmemb("./instructions.prog", memori_instr);
     end

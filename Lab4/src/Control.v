@@ -80,7 +80,7 @@ module Control(
                 ALUop <= 2'b00;
                 memWrite <= 1'b0;
                 ALUsrc <= 1'b1;
-                regWrite <= 1'b1;
+                regWrite <= 1'b0;
                 jump <= 1'b0;
                 jumpReturn <= 1'b1;
             end
@@ -113,7 +113,7 @@ module Control(
                 branch <= 1'b0;
                 memRead <= 1'b0;
                 memToReg <= 1'b0;
-                ALUop <= 2'b11;
+                ALUop <= 2'b00;
                 memWrite <= 1'b0;
                 ALUsrc <= 1'b0;
                 regWrite <= 1'b1;
@@ -139,7 +139,7 @@ module ALUcontrol (
     input [3:0] instruction,
     input [1:0] ALUop,
     output reg [3:0] ALUctrl,
-    output reg bne,
+    output reg [1:0] bType,
     output reg asByte,
     output reg asUnsigned
     
@@ -150,62 +150,78 @@ module ALUcontrol (
                 // andi
                 if (instruction[2:0] == 3'b111) begin
                     ALUctrl <= 4'b0000;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // slli
                 else if (instruction[2:0] == 3'b001) begin
                     ALUctrl <= 4'b0011;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // srli
                 else if (instruction[2:0] == 3'b101) begin
                     ALUctrl <= 4'b0111;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // lb, sb
                 else if (instruction[2:0] == 3'b000) begin
                     ALUctrl <= 4'b0010;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b1;
                     asUnsigned <= 1'b0;
                 end
                 // lbu
                 else if (instruction[2:0] == 3'b100) begin
                     ALUctrl <= 4'b0010;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b1;
                     asUnsigned <= 1'b1;
                 end
-                // lw, sw, addi, jalr
+                // lw, sw, addi, jal, jalr
                 else begin
                     ALUctrl <= 4'b0010;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
             end
             2'b01: begin
+                // beq
                 if (instruction[2:0] == 3'b000) begin
                     ALUctrl <= 4'b0110;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
+                // bType
                 else if (instruction[2:0] == 3'b001) begin
                     ALUctrl <= 4'b0110;
-                    bne <= 1'b1;
+                    bType <= 2'b01;
+                    asByte <= 1'b0;
+                    asUnsigned <= 1'b0;
+                end
+                // bge
+                else if (instruction[2:0] == 3'b101) begin
+                    ALUctrl <= 4'b0110;
+                    bType <= 2'b10;
+                    asByte <= 1'b0;
+                    asUnsigned <= 1'b0;
+                end
+                // blt
+                else if (instruction[2:0] == 3'b100) begin
+                    ALUctrl <= 4'b0110;
+                    bType <= 2'b11;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 else begin
                     ALUctrl <= 4'b0000;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
@@ -214,68 +230,62 @@ module ALUcontrol (
                 // add
                 if (instruction[2:0] == 3'b000 && instruction[3] == 1'b0) begin
                     ALUctrl <= 4'b0010;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // sub
                 else if (instruction[2:0] == 3'b000 && instruction[3] == 1'b1) begin
                     ALUctrl <= 4'b0110;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // and
                 else if (instruction[2:0] == 3'b111) begin
                     ALUctrl <= 4'b0000;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // or
                 else if (instruction[2:0] == 3'b110) begin
                     ALUctrl <= 4'b0001;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // sll
                 else if (instruction[2:0] == 3'b001) begin
                     ALUctrl <= 4'b0011;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // srl
                 else if (instruction[2:0] == 3'b101 && instruction[3] == 1'b0) begin
                     ALUctrl <= 4'b0111;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 // sra
                 else if (instruction[2:0] == 3'b101 && instruction[3] == 1'b1) begin
                     ALUctrl <= 4'b1000;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
                 else begin
                     ALUctrl <= 4'b0000;
-                    bne <= 1'b0;
+                    bType <= 2'b00;
                     asByte <= 1'b0;
                     asUnsigned <= 1'b0;
                 end
             end
-            2'b11: begin
-                    ALUctrl <= 4'b0000;
-                    bne <= 1'b0;
-                    asByte <= 1'b0;
-                    asUnsigned <= 1'b0;
-            end
             default: begin
                 ALUctrl <= 4'b0000;
-                bne <= 1'b0;
+                bType <= 2'b00;
                 asByte <= 1'b0;
                 asUnsigned <= 1'b0;
             end
