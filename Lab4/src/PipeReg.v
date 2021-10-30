@@ -44,6 +44,8 @@ module ID_EX (
     input memWrite_in,
     input ALUsrc_in,
     input regWrite_in,
+    input jump_in,
+    input jump_return_in,
 
     output reg branch_out,
     output reg memRead_out,
@@ -52,6 +54,8 @@ module ID_EX (
     output reg memWrite_out,
     output reg ALUsrc_out,
     output reg regWrite_out,
+    output reg jump_out,
+    output reg jump_return_out,
     /* Control Signals */
     
     input [31:0] pc_in,
@@ -76,6 +80,8 @@ module ID_EX (
         memWrite_out <= memWrite_in;
         ALUsrc_out <= ALUsrc_in;
         regWrite_out <= regWrite_in;
+        jump_out <= jump_in;
+        jump_return_out <= jump_return_in;
 
         pc_out <= pc_in;
         read_data_1_out <= read_data_1_in;
@@ -94,20 +100,28 @@ module EX_MEM (
     input memToReg_in,
     input memWrite_in,
     input regWrite_in,
+    input jump_in,
 
     output reg branch_out,
     output reg memRead_out,
     output reg memToReg_out,
     output reg memWrite_out,
     output reg regWrite_out,
+    output reg jump_out,
     /* Control Signals */
     
+    input [31:0] pc_in,
+    output reg [31:0] pc_out,
     input [31:0] branch_destination_in,
     output reg [31:0] branch_destination_out,
     input zero_in,
     output reg zero_out,
     input bne_in,
     output reg bne_out,
+    input asByte_in,
+    output reg asByte_out,
+    input asUnsigned_in,
+    output reg asUnsigned_out,
     input [31:0] ALU_result_in,
     output reg [31:0] ALU_result_out,
     input [31:0] read_data_2_in,
@@ -122,10 +136,14 @@ module EX_MEM (
         memToReg_out <= memToReg_in;
         memWrite_out <= memWrite_in;
         regWrite_out <= regWrite_in;
+        jump_out <= jump_in;
 
+        pc_out  <= pc_in;
         branch_destination_out <= branch_destination_in;
         zero_out <= zero_in;
         bne_out <= bne_in;
+        asByte_out <= asByte_in;
+        asUnsigned_out <= asUnsigned_in;
         ALU_result_out <= ALU_result_in;
         read_data_2_out <= read_data_2_in;
         rd_out <= rd_in;
@@ -137,11 +155,15 @@ module MEM_WB (
     /* Control Signals */
     input memToReg_in,
     input regWrite_in,
+    input jump_in,
 
     output reg memToReg_out,
     output reg regWrite_out,
+    output reg jump_out,
     /* Control Signals */
     
+    input [31:0] pc_in,
+    output reg [31:0] pc_out,
     input [31:0] read_data_in,
     output reg [31:0] read_data_out,
     input [31:0] ALU_result_in,
@@ -153,7 +175,9 @@ module MEM_WB (
     always @ (posedge clk) begin
             memToReg_out <= memToReg_in;
             regWrite_out <= regWrite_in;
+            jump_out <= jump_in;
 
+            pc_out  <= pc_in;
             read_data_out <= read_data_in;
             ALU_result_out <= ALU_result_in;
             rd_out <= rd_in;

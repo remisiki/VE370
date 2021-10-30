@@ -33,22 +33,6 @@ module PC(
     end
 endmodule : PC
 
-module NextPC (
-    input [31:0] pc_current,
-    input [31:0] immediate,
-    input branch,
-    input zero,
-    input bne,
-    output [31:0] pc_next
-    
-);
-    wire sel;
-    wire [31:0] branch_destination;
-    assign sel = (bne)? (branch & ~zero): (branch & zero);
-    BranchPC uut0 (pc_current, immediate, branch_destination);
-    Mux32bit uut (pc_current + 1, branch_destination, sel, pc_next);
-endmodule : NextPC
-
 module BranchPC (
     input [31:0] pc_current,
     input [31:0] immediate,
@@ -66,6 +50,27 @@ module SelPC (
     
 );
     initial pcSrc = 1'b0;
-    always @ (*)
+    always @ (*) begin
         pcSrc = (bne)? (branch & ~zero): (branch & zero);
+    end
 endmodule : SelPC
+
+module Jump (
+    input jump,
+    output reg pcSrc
+    
+);
+    initial pcSrc = 1'b0;
+    always @ (*)
+        pcSrc = jump;
+endmodule : Jump
+
+module JumpReturn (
+    input jump_return,
+    output reg pcSrc
+    
+);
+    initial pcSrc = 1'b0;
+    always @ (*)
+        pcSrc = jump_return;
+endmodule : JumpReturn
