@@ -31,15 +31,12 @@
     bne t0 t1 right_branch_1 # should branch
     nop
     nop
-    nop
     add t2 x0 x0
 right_branch_1:
     beq t2 x0 error1 # shouldn't branch
     nop
     nop
-    nop
     bge t2 t4 error1 # shouldn't branch
-    nop
     nop
     nop
     add t0 t2 x0
@@ -48,16 +45,13 @@ right_branch_1:
     blt t2 t4 right_branch_2 # should branch
     nop
     nop
-    nop
 error1:
     add t0 x0 x0
 right_branch_2:
     bne t2 t0 error2 # shouldn't branch
     nop
     nop
-    nop
     beq t2 t0 right_branch_3 # should branch
-    nop
     nop
     nop
 error2:
@@ -66,9 +60,7 @@ right_branch_3:
     blt t1 t4 error3 #shouldn't branch
     nop
     nop
-    nop
     bge t1 t3 right_branch_4 # should branch
-    nop
     nop
     nop
 error3:
@@ -80,7 +72,6 @@ right_branch_4:
     nop
     nop
     beq t0 t2 exit # should branch
-    nop
     nop
     nop
 memory_test:

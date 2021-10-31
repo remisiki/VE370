@@ -25,9 +25,11 @@ module InstrMem(
     output [31:0] instruction
 
 );
-    reg [31:0] memori_instr [86:0];
-    initial begin
+    reg [31:0] memori_instr [99:0];
+    // Initial block should be deleted in synthesis
+    initial
         $readmemb("./instructions.prog", memori_instr);
-    end
+    // 
+
     assign instruction = memori_instr[PC];
 endmodule: InstrMem

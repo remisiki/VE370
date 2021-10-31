@@ -101,6 +101,7 @@ module EX_MEM (
     input memWrite_in,
     input regWrite_in,
     input jump_in,
+    input jump_return_in,
 
     output reg branch_out,
     output reg memRead_out,
@@ -108,6 +109,7 @@ module EX_MEM (
     output reg memWrite_out,
     output reg regWrite_out,
     output reg jump_out,
+    output reg jump_return_out, 
     /* Control Signals */
     
     input [31:0] pc_in,
@@ -139,6 +141,7 @@ module EX_MEM (
         memWrite_out <= memWrite_in;
         regWrite_out <= regWrite_in;
         jump_out <= jump_in;
+        jump_return_out <= jump_return_in;
 
         pc_out  <= pc_in;
         branch_destination_out <= branch_destination_in;

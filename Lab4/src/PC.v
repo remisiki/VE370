@@ -25,10 +25,13 @@ module PC(
     input [31:0] pc_next,
     output reg [31:0] pc_current
 );
+    // Initial block should be deleted in synthesis
     initial begin
-        pc_current = 32'b0;
+        pc_current <= 32'b0;
     end
-    always @(posedge clk) begin
+    // 
+
+    always @(negedge clk) begin
         pc_current = pc_next;
     end
 endmodule : PC
@@ -50,7 +53,10 @@ module SelPC (
     output reg pcSrc
     
 );
-    initial pcSrc = 1'b0;
+    // Initial block should be deleted in synthesis
+    initial pcSrc <= 1'b0;
+    // 
+
     always @ (*) begin
         case (bType)
             2'b00:
@@ -71,7 +77,10 @@ module Jump (
     output reg pcSrc
     
 );
-    initial pcSrc = 1'b0;
+    // Initial block should be deleted in synthesis
+    initial pcSrc <= 1'b0;
+    // 
+
     always @ (*)
         pcSrc = jump;
 endmodule : Jump
@@ -81,7 +90,10 @@ module JumpReturn (
     output reg pcSrc
     
 );
-    initial pcSrc = 1'b0;
+    // Initial block should be deleted in synthesis
+    initial pcSrc <= 1'b0;
+    // 
+
     always @ (*)
         pcSrc = jump_return;
 endmodule : JumpReturn

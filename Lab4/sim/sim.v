@@ -26,7 +26,7 @@ module sim(
     reg clk;
     top uut (clk);
     initial begin
-        #5 clk = 0;
+        #0 clk = 0;
         forever #5   clk = ~ clk;
     end
     integer f, i, j;
@@ -38,6 +38,14 @@ module sim(
             $fclose(f);
             f = $fopen("./register.txt", "w");
             $fclose(f);
+            $readmemb("./instructions.prog", uut.uut0.memori_instr);
+            for (i = 0; i < 32; i = i + 1) begin
+                uut.uut2.register[i] <= 32'b0;
+            end
+            uut.uut13.pcSrc <= 1'b0;
+            uut.uut8.pcSrc <= 1'b0;
+            uut.uut9.pcSrc <= 1'b0;
+            uut.uut.pc_current <= 32'b0;
         end
     end
     initial begin

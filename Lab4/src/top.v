@@ -62,19 +62,20 @@ module top(
     ImmGen uut3 (instruction_ID, immediate_ID);
 
     // EX
-    AlterPC uut4 (pc_EX, immediate_EX, alter_destination_EX);
-    Jump uut5 (jump_EX, pcSrc_jump);
-    JumpReturn uut6 (jump_return_EX, pcSrc);
-    Mux32bit uut7 (pc_branch, alter_destination_EX, pcSrc_jump, pc_jump);
-    Mux32bit uut8 (pc_jump, read_data_1_EX >> 2, pcSrc, pc_next);
 
-    ALUcontrol uut9 (funct3_EX, ALUop_EX, ALUctrl, bType_EX, asByte_EX, asUnsigned_EX);
-    Mux32bit uut10 (read_data_2_EX, immediate_EX, ALUsrc_EX, ALU_in_1);
-    ALU uut11 (read_data_1_EX, ALU_in_1, ALUctrl, zero_EX, lt_zero_EX, ALU_result_EX);
+    AlterPC uut4 (pc_EX, immediate_EX, alter_destination_EX);
+    ALUcontrol uut5 (funct3_EX, ALUop_EX, ALUctrl, bType_EX, asByte_EX, asUnsigned_EX);
+    Mux32bit uut6 (read_data_2_EX, immediate_EX, ALUsrc_EX, ALU_in_1);
+    ALU uut7 (read_data_1_EX, ALU_in_1, ALUctrl, zero_EX, lt_zero_EX, ALU_result_EX);
 
     // MEM
-    Mux32bit uut12 (pc_IF + 1, alter_destination_MEM, pcSrc_branch, pc_branch);
+    Jump uut8 (jump_MEM, pcSrc_jump);
+    JumpReturn uut9 (jump_return_MEM, pcSrc);
+    Mux32bit uut10 (pc_IF + 1, alter_destination_MEM, pcSrc_branch, pc_branch);
+    Mux32bit uut11 (pc_branch, alter_destination_MEM, pcSrc_jump, pc_jump);
+    Mux32bit uut12 (pc_jump, (ALU_result_MEM >> 2), pcSrc, pc_next);
     SelPC uut13 (zero_MEM, lt_zero_MEM, bType_MEM, branch_MEM, pcSrc_branch);
+
     DataMem uut14 (clk, memWrite_MEM, ALU_result_MEM, ALU_result_MEM, read_data_2_MEM, read_data_MEM, asByte_MEM, asUnsigned_MEM);
 
     // WB
@@ -87,8 +88,8 @@ module top(
         branch_EX, memRead_EX, memToReg_EX, ALUop_EX, memWrite_EX, ALUsrc_EX, regWrite_EX, jump_EX, jump_return_EX, 
         pc_ID, pc_EX, read_data_1_ID, read_data_1_EX, read_data_2_ID, read_data_2_EX, 
         immediate_ID, immediate_EX, {instruction_ID[30], instruction_ID[14:12]}, funct3_EX, instruction_ID[11:7], rd_EX);
-    EX_MEM uut19 (clk, branch_EX, memRead_EX, memToReg_EX, memWrite_EX, regWrite_EX, jump_EX, 
-        branch_MEM, memRead_MEM, memToReg_MEM, memWrite_MEM, regWrite_MEM, jump_MEM, 
+    EX_MEM uut19 (clk, branch_EX, memRead_EX, memToReg_EX, memWrite_EX, regWrite_EX, jump_EX, jump_return_EX, 
+        branch_MEM, memRead_MEM, memToReg_MEM, memWrite_MEM, regWrite_MEM, jump_MEM, jump_return_MEM, 
         pc_EX, pc_MEM, alter_destination_EX, alter_destination_MEM, zero_EX, zero_MEM, lt_zero_EX, lt_zero_MEM, bType_EX, bType_MEM, 
         asByte_EX, asByte_MEM, asUnsigned_EX, asUnsigned_MEM, ALU_result_EX, ALU_result_MEM, read_data_2_EX, read_data_2_MEM, rd_EX, rd_MEM);
     MEM_WB uut20 (clk, memToReg_MEM, regWrite_MEM, jump_MEM, 

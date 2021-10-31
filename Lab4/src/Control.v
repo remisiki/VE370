@@ -80,7 +80,7 @@ module Control(
                 ALUop <= 2'b00;
                 memWrite <= 1'b0;
                 ALUsrc <= 1'b1;
-                regWrite <= 1'b0;
+                regWrite <= 1'b1;
                 jump <= 1'b0;
                 jumpReturn <= 1'b1;
             end
@@ -115,7 +115,7 @@ module Control(
                 memToReg <= 1'b0;
                 ALUop <= 2'b00;
                 memWrite <= 1'b0;
-                ALUsrc <= 1'b0;
+                ALUsrc <= 1'b1;
                 regWrite <= 1'b1;
                 jump <= 1'b1;
                 jumpReturn <= 1'b0;
