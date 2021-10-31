@@ -54,7 +54,7 @@ module sim(
             $fwrite(f, "time = %3d\n", $time);
             for (i = 0; i < 8; i = i + 1) begin
                 for (j = 0; j < 4; j = j + 1)
-                    $fwrite(f, "\tregister[%2d] = %2d ", 4 * i + j, uut.uut2.register[4 * i + j]);
+                    $fwrite(f, "\tregister[%2d] = %2d ", 4 * i + j, $signed(uut.uut2.register[4 * i + j]));
                 $fwrite(f, "\n");
             end
             $fclose(f);
