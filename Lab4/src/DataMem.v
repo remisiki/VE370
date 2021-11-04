@@ -32,6 +32,7 @@ module DataMem(
 
 );
     reg [7:0] memori [31:0];
+    wire [31:0] signed_value, unsigned_value, byte_value, word_value;
     always @(posedge clk) begin
         if (write_en && (~ asByte)) begin
             memori[write_addr] = write_data[7:0];
@@ -43,5 +44,9 @@ module DataMem(
             memori[write_addr] = write_data[7:0];
         end
     end
-    assign read_data = (asByte) ? ({{24{(asUnsigned) ? 0 : memori[read_addr][7]}}, memori[read_addr]}) : ({memori[read_addr + 3], memori[read_addr + 2], memori[read_addr + 1], memori[read_addr]});
+    assign unsigned_value = {24'b0, memori[read_addr]};
+    assign signed_value = {{24{memori[read_addr][7]}}, memori[read_addr]};
+    assign word_value = {memori[read_addr + 3], memori[read_addr + 2], memori[read_addr + 1], memori[read_addr]};
+    Mux32bit uut (signed_value,unsigned_value, asUnsigned, byte_value);
+    Mux32bit uut0 (word_value, byte_value, asByte, read_data);
 endmodule : DataMem
