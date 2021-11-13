@@ -54,7 +54,7 @@ module top(
     wire [31:0] read_data_MEM, read_data_WB;
     wire [1:0] forward_A, forward_B;
     wire [4:0] rs1_EX, rs2_EX, rs2_MEM;
-    wire pc_write, IF_ID_write, control_src, rs2_src, mem_src;
+    wire pc_write, IF_ID_write, control_src, rs2_src, mem_src, flush;
 
     // initial begin
     //     pc_write = 1'b1;
@@ -87,15 +87,16 @@ module top(
     ALU uut7 (ALU_in_1, ALU_in_2, ALUctrl, zero_EX, lt_zero_EX, ALU_result_EX);
 
     // MEM
-    Jump uut8 (jump_MEM, pcSrc_jump);
-    JumpReturn uut9 (jump_return_MEM, pcSrc);
-    Mux32bit uut10 (pc_IF + 1, alter_destination_MEM, pcSrc_branch, pc_branch);
-    Mux32bit uut11 (pc_branch, alter_destination_MEM, pcSrc_jump, pc_jump);
-    Mux32bit uut12 (pc_jump, (ALU_result_MEM >> 2), pcSrc, pc_next);
-    SelPC uut13 (zero_MEM, lt_zero_MEM, bType_MEM, branch_MEM, pcSrc_branch);
+    Jump uut8 (jump_EX, pcSrc_jump);
+    JumpReturn uut9 (jump_return_EX, pcSrc);
+    Mux32bit uut10 (pc_IF + 1, alter_destination_EX, pcSrc_branch, pc_branch);
+    Mux32bit uut11 (pc_branch, alter_destination_EX, pcSrc_jump, pc_jump);
+    Mux32bit uut12 (pc_jump, (ALU_result_EX >> 2), pcSrc, pc_next);
+    SelPC uut13 (zero_EX, lt_zero_EX, bType_EX, branch_EX, pcSrc_branch);
+    IF_FLUSH uut28 (pcSrc_jump, pcSrc, pcSrc_branch, flush);
 
     Mux32bit uut27 (read_data_2_MEM, read_data_WB, mem_src, write_data_mem);
-    LoadSaveHazard uut28 (memWrite_MEM, memRead_WB, rd_WB, rs2_MEM, mem_src);
+    LoadSaveHazard uut29 (memWrite_MEM, memRead_WB, rd_WB, rs2_MEM, mem_src);
     DataMem uut14 (clk, memWrite_MEM, ALU_result_MEM, ALU_result_MEM, write_data_mem, read_data_MEM, asByte_MEM, asUnsigned_MEM);
 
     // WB
@@ -103,7 +104,7 @@ module top(
     Mux32bit uut16 (write_data, (pc_WB + 1) << 2, jump_WB, write_data_jump);
 
     // Pipeline Registers
-    IF_ID uut17 (clk, IF_ID_write, pc_IF, pc_ID, instruction_IF, instruction_ID);
+    IF_ID uut17 (clk, IF_ID_write, flush, pc_IF, pc_ID, instruction_IF, instruction_ID);
     ID_EX uut18 (clk, branch_ID, memRead_ID, memToReg_ID, ALUop_ID, memWrite_ID, ALUsrc_ID, regWrite_ID, jump_ID, jump_return_ID, 
         branch_EX, memRead_EX, memToReg_EX, ALUop_EX, memWrite_EX, ALUsrc_EX, regWrite_EX, jump_EX, jump_return_EX, 
         pc_ID, pc_EX, read_data_1_ID, read_data_1_EX, read_data_2_ID, read_data_2_EX, 

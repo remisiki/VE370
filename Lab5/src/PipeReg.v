@@ -19,18 +19,36 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module IF_FLUSH (
+    input jump,
+    input jump_return,
+    input branch,
+    output reg flush
+    
+);
+    always @ (*) begin
+        flush = ((jump) || (jump_return) || (branch));
+    end
+endmodule : IF_FLUSH
+
 
 module IF_ID(
     input clk,
     input write_en,
+    input flush,
     input [31:0] pc_in,
     output reg [31:0] pc_out,
     input [31:0] instruction_in,
     output reg [31:0] instruction_out
 
 );
-    always @ (posedge clk) begin
-        if (write_en) begin
+    always @ (negedge clk) begin
+        if (flush) begin
+            pc_out <= pc_out;
+            instruction_out <= 32'b00000000000000000000000000010011;
+            $display("Flush at %d\n", pc_out);
+        end
+        else if (write_en) begin
             pc_out <= pc_in;
             instruction_out <= instruction_in;
         end
