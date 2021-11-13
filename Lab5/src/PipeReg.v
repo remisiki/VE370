@@ -140,7 +140,9 @@ module EX_MEM (
     input [31:0] read_data_2_in,
     output reg [31:0] read_data_2_out,
     input [4:0] rd_in,
-    output reg [4:0] rd_out
+    output reg [4:0] rd_out,
+    input [4:0] rs2_in,
+    output reg [4:0] rs2_out
 
 );
     always @ (posedge clk) begin
@@ -151,6 +153,7 @@ module EX_MEM (
         regWrite_out <= regWrite_in;
         jump_out <= jump_in;
         jump_return_out <= jump_return_in;
+        rs2_out <= rs2_in;
 
         pc_out  <= pc_in;
         branch_destination_out <= branch_destination_in;
@@ -171,10 +174,12 @@ module MEM_WB (
     input memToReg_in,
     input regWrite_in,
     input jump_in,
+    input memRead_in,
 
     output reg memToReg_out,
     output reg regWrite_out,
     output reg jump_out,
+    output reg memRead_out,
     /* Control Signals */
     
     input [31:0] pc_in,
@@ -191,6 +196,7 @@ module MEM_WB (
             memToReg_out <= memToReg_in;
             regWrite_out <= regWrite_in;
             jump_out <= jump_in;
+            memRead_out <= memRead_in;
 
             pc_out  <= pc_in;
             read_data_out <= read_data_in;
