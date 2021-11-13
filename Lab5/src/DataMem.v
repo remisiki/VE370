@@ -22,6 +22,7 @@
 
 module DataMem(
     input clk,
+    input reset,
     input write_en,
     input [31:0] read_addr,
     input [31:0] write_addr,
@@ -33,8 +34,14 @@ module DataMem(
 );
     reg [7:0] memori [31:0];
     wire [31:0] signed_value, unsigned_value, byte_value, word_value;
+    integer i;
     always @(posedge clk) begin
-        if (write_en && (~ asByte)) begin
+        if (reset) begin
+            for (i = 0; i < 32; i = i + 1) begin
+                memori[i] <= 8'b0;
+            end
+        end
+        else if (write_en && (~ asByte)) begin
             memori[write_addr] = write_data[7:0];
             memori[write_addr + 1] = write_data[15:8];
             memori[write_addr + 2] = write_data[23:16];

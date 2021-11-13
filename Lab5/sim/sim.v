@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2021/10/12 21:53:49
+// Create Date: 2021/11/13 13:05:14
 // Design Name: 
 // Module Name: sim
 // Project Name: 
@@ -24,8 +24,13 @@ module sim(
 
     );
     reg clk;
+    wire clk_100MHz;
+    reg reset;
+    wire [4:0] register_index;
+    wire [6:0] ssd;
+    wire [3:0] a;
     wire [31:0] pc;
-    top uut (clk, pc);
+    top uut (clk_100MHz, clk, reset, register_index, ssd, a);
     initial begin
         #0 clk = 0;
         forever #5   clk = ~ clk;
@@ -33,13 +38,14 @@ module sim(
     integer f, i, j;
     initial begin
         #0 begin
+            reset = 1'b0;
             // f = $fopen("./control.txt", "w");
             // $fclose(f);
             f = $fopen("./memory.txt", "w");
             $fclose(f);
             f = $fopen("./register.txt", "w");
             $fclose(f);
-            $readmemb("./instructions.prog", uut.uut0.memori_instr);
+            // $readmemb("./instructions.prog", uut.uut0.memori_instr);
             // for (i = 0; i < 32; i = i + 1) begin
             //     uut.uut2.register[i] <= 32'b0;
             // end
@@ -48,6 +54,8 @@ module sim(
             // uut.uut9.pcSrc <= 1'b0;
             // uut.uut.pc_current <= 32'b0;
         end
+        #400 reset = 1'b1;
+        #10 reset = 1'b0;
     end
     initial begin
         forever #10 begin
@@ -76,6 +84,6 @@ module sim(
             $fclose(f);
         end
     end
-    // initial
-    //     #10000 $stop;
+    initial
+        #500 $stop;
 endmodule

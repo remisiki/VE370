@@ -35,21 +35,21 @@ module Forward(
     always @ (*) begin
         if ((regWrite_EX_MEM) && (rd_EX_MEM > 0) && (rd_EX_MEM == rs1_ID_EX)) begin
             forward_A = 2'b10;
-            $display("EX hazard at rs1 x%d\n", rs1_ID_EX);
+            // $display("EX hazard at rs1 x%d\n", rs1_ID_EX);
         end
         else if ((regWrite_MEM_WB) && (rd_MEM_WB > 0) && (rd_MEM_WB == rs1_ID_EX)) begin
             forward_A = 2'b01;
-            $display("MEM hazard at rs1 x%d\n", rs1_ID_EX);
+            // $display("MEM hazard at rs1 x%d\n", rs1_ID_EX);
         end
         else
             forward_A = 2'b00;
         if ((regWrite_EX_MEM) && (rd_EX_MEM > 0) && (rd_EX_MEM == rs2_ID_EX) && (~memWrite_ID_EX)) begin
             forward_B = 2'b10;
-            $display("EX hazard at rs2 x%d\n", rs2_ID_EX);
+            // $display("EX hazard at rs2 x%d\n", rs2_ID_EX);
         end
         else if ((regWrite_MEM_WB) && (rd_MEM_WB > 0) && (rd_MEM_WB == rs2_ID_EX) && (~memWrite_ID_EX)) begin
             forward_B = 2'b01;
-            $display("MEM hazard at rs2 x%d\n", rs2_ID_EX);
+            // $display("MEM hazard at rs2 x%d\n", rs2_ID_EX);
         end
         else begin
             forward_B = 2'b00;
@@ -78,7 +78,7 @@ module LoadHazard (
             control_src <= 1'b0;
             pc_write <= 1'b0;
             IF_ID_write <= 1'b0;
-            $display("LoadHazard at x%d\n", rd_ID_EX);
+            // $display("LoadHazard at x%d\n", rd_ID_EX);
         end
         else begin
             control_src <= 1'b1;
@@ -101,7 +101,7 @@ module SaveHazard (
     always @ (*) begin
         if (memWrite_IF_ID && (rd_ID_EX > 0) && (rd_ID_EX == rs2_IF_ID)) begin
             rs2_src <= 1'b1;
-            $display("SaveHazard at x%d\n", rd_ID_EX);
+            // $display("SaveHazard at x%d\n", rd_ID_EX);
         end
         else begin
             rs2_src <= 1'b0;
@@ -123,7 +123,7 @@ module LoadSaveHazard (
     always @ (*) begin
         if (memWrite_EX_MEM && memRead_MEM_WB && (rd_MEM_WB == rs2_EX_MEM)) begin
             mem_src <= 1'b1;
-            $display("LoadSaveHazard at x\n");
+            // $display("LoadSaveHazard at x\n");
         end
         else begin
             mem_src <= 1'b0;

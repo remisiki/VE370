@@ -46,7 +46,7 @@ module IF_ID(
         if (flush) begin
             pc_out <= pc_out;
             instruction_out <= 32'b00000000000000000000000000010011;
-            $display("Flush at %d\n", pc_out);
+            // $display("Flush at %d\n", pc_out);
         end
         else if (write_en) begin
             pc_out <= pc_in;
