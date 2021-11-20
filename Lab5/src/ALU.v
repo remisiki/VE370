@@ -45,3 +45,14 @@ module ALU(
     assign zero = (result == 0);
     assign lt_zero = (result < 0);
 endmodule
+
+module Comparator (
+    input signed [31:0] a,
+    input signed [31:0] b,
+    output zero,
+    output lt_zero
+    
+);
+    assign zero = (a == b);
+    assign lt_zero = (a < b);
+endmodule : Comparator

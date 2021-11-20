@@ -305,6 +305,29 @@ module ALUcontrol (
     end
 endmodule : ALUcontrol
 
+module BranchCheck (
+    input [3:0] instruction,
+    input [1:0] ALUop,
+    output reg [1:0] bType
+    
+);
+    always @ (*)
+        if (ALUop == 2'b10) begin
+            case (instruction[2:0])
+                3'b000:
+                    bType <= 2'b00;
+                3'b001:
+                    bType <= 2'b01;
+                3'b101:
+                    bType <= 2'b10;
+                3'b100:
+                    bType <= 2'b11;
+                default:
+                    bType <= 2'b00;
+            endcase
+        end
+endmodule : BranchCheck
+
 module Mux32bit (
     input [31:0] a,
     input [31:0] b,

@@ -31,7 +31,7 @@ module PC(
         pc_current <= 32'b0;
     end
 
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         if (reset)
             pc_current = 32'b0;
         else if (pc_write)
@@ -94,3 +94,11 @@ module JumpReturn (
     always @ (*)
         pcSrc = jump_return;
 endmodule : JumpReturn
+
+module RealPC (
+    input [31:0] pc,
+    output [31:0] pc_out
+    
+);
+    assign pc_out = (pc << 2);
+endmodule : RealPC

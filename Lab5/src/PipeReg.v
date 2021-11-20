@@ -42,7 +42,7 @@ module IF_ID(
     output reg [31:0] instruction_out
 
 );
-    always @ (negedge clk) begin
+    always @ (posedge clk) begin
         if (flush) begin
             pc_out <= pc_out;
             instruction_out <= 32'b00000000000000000000000000010011;

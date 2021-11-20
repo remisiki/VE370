@@ -21,6 +21,7 @@
 
 
 module Forward(
+    input branch_IF_ID,
     input regWrite_EX_MEM,
     input regWrite_MEM_WB,
     input memWrite_ID_EX,
@@ -28,8 +29,12 @@ module Forward(
     input [4:0] rd_MEM_WB,
     input [4:0] rs1_ID_EX,
     input [4:0] rs2_ID_EX,
+    input [4:0] rs1_IF_ID,
+    input [4:0] rs2_IF_ID,
     output reg [1:0] forward_A,
-    output reg [1:0] forward_B
+    output reg [1:0] forward_B,
+    output reg [1:0] forward_A_comp,
+    output reg [1:0] forward_B_comp
 
 );
     always @ (*) begin
@@ -54,13 +59,35 @@ module Forward(
         else begin
             forward_B = 2'b00;
         end
+        if ((regWrite_EX_MEM) && (branch_IF_ID) && (rd_EX_MEM > 0) && (rd_EX_MEM == rs1_IF_ID)) begin
+            forward_A_comp = 2'b10;
+        end
+        else if ((regWrite_MEM_WB) && (branch_IF_ID) && (rd_MEM_WB > 0) && (rd_MEM_WB == rs1_IF_ID)) begin
+            forward_A_comp = 2'b01;
+        end
+        else begin
+            forward_A_comp = 2'b00;
+        end
+        if ((regWrite_EX_MEM) && (branch_IF_ID) && (rd_EX_MEM > 0) && (rd_EX_MEM == rs2_IF_ID)) begin
+            forward_B_comp = 2'b10;
+        end
+        else if ((regWrite_MEM_WB) && (branch_IF_ID) && (rd_MEM_WB > 0) && (rd_MEM_WB == rs2_IF_ID)) begin
+            forward_B_comp = 2'b01;
+        end
+        else begin
+            forward_B_comp = 2'b00;
+        end
     end
 endmodule : Forward
 
 module LoadHazard (
+    input branch_IF_ID,
+    input regWrite_ID_EX,
     input memRead_ID_EX,
+    input memRead_EX_MEM,
     input memWrite_IF_ID,
     input [4:0] rd_ID_EX,
+    input [4:0] rd_EX_MEM,
     input [4:0] rs1_IF_ID,
     input [4:0] rs2_IF_ID,
     output reg control_src,
@@ -74,7 +101,19 @@ module LoadHazard (
         IF_ID_write <= 1'b1;
     end
     always @ (*) begin
-        if (memRead_ID_EX && ((rd_ID_EX == rs1_IF_ID) || (rd_ID_EX == rs2_IF_ID)) && (~ (memWrite_IF_ID))/**/) begin
+        if (branch_IF_ID && regWrite_ID_EX && ((rd_ID_EX == rs1_IF_ID) || (rd_ID_EX == rs2_IF_ID))) begin
+            control_src <= 1'b0;
+            pc_write <= 1'b0;
+            IF_ID_write <= 1'b0;
+            $display("BranchHazard at x%d\n", rd_ID_EX);
+        end
+        else if (branch_IF_ID && memRead_EX_MEM && ((rd_EX_MEM == rs1_IF_ID) || (rd_EX_MEM == rs2_IF_ID))) begin
+            control_src <= 1'b0;
+            pc_write <= 1'b0;
+            IF_ID_write <= 1'b0;
+            $display("LoadBranchHazard at x%d\n", rd_ID_EX);
+        end
+        else if (memRead_ID_EX && ((rd_ID_EX == rs1_IF_ID) || (rd_ID_EX == rs2_IF_ID)) && (~ (memWrite_IF_ID))/**/) begin
             control_src <= 1'b0;
             pc_write <= 1'b0;
             IF_ID_write <= 1'b0;

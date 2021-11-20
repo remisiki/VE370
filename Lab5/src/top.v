@@ -25,12 +25,13 @@ module top(
     input clk,
     input reset,
     input [4:0] register_index,
+    input pc_read,
     output reg [6:0] ssd,
     output [3:0] a
 
 );
-    wire [31:0] pc_next, pc_branch, pc_jump, ALU_in_1, ALU_in_2, write_data, write_data_jump, write_data_mem;
-    wire [31:0] pc_IF,/**/ pc_ID, pc_EX, pc_MEM, pc_WB;
+    wire [31:0] pc_next, pc_branch, pc_jump, ALU_in_1, ALU_in_2, write_data, write_data_jump, write_data_mem, comp_in_1, comp_in_2;
+    wire [31:0] pc_IF,/**/ pc_ID, pc_EX, pc_MEM, pc_WB, pc_out;
     wire [31:0] instruction_IF, instruction_ID;
     wire branch_ID, branch_EX, branch_MEM;
     wire jump_ID, jump_EX, jump_MEM, jump_WB;
@@ -45,18 +46,18 @@ module top(
     wire [3:0] funct3_EX;
     wire [31:0] immediate_ID, immediate_EX;
     wire [4:0] rd_EX, rd_MEM, rd_WB;
-    wire [1:0] bType_EX, bType_MEM;
-    wire zero_EX, zero_MEM;
-    wire lt_zero_EX, lt_zero_MEM;
+    wire [1:0] bType_ID, bType_EX, bType_MEM;
+    wire zero_EX, zero_MEM, zero_BR;
+    wire lt_zero_EX, lt_zero_MEM, lt_zero_BR;
     wire asByte_EX, asByte_MEM;
     wire asUnsigned_EX, asUnsigned_MEM;
     wire [1:0] ALUop_ID, ALUop_EX;
     wire [31:0] ALU_result_EX, ALU_result_MEM, ALU_result_WB;
     wire [3:0] ALUctrl;
-    wire [31:0] alter_destination_EX, alter_destination_MEM;
+    wire [31:0] alter_destination_ID, alter_destination_EX, alter_destination_MEM;
     wire pcSrc, pcSrc_branch, pcSrc_jump;
     wire [31:0] read_data_MEM, read_data_WB;
-    wire [1:0] forward_A, forward_B;
+    wire [1:0] forward_A, forward_B, forward_A_comp, forward_B_comp;
     wire [4:0] rs1_EX, rs2_EX, rs2_MEM;
     wire pc_write, IF_ID_write, control_src, rs2_src, mem_src, flush;
 
@@ -65,10 +66,10 @@ module top(
     wire [6:0] ssd0, ssd1, ssd2, ssd3;
     clk_divider #200000 clk1 (clk_100MHz, reset, clk_500Hz);
     ring_counter_4_bit r1 (clk_500Hz, reset, a);
-    SSD uut30 (uut2.register[register_index][3:0], ssd0);
-    SSD uut31 (uut2.register[register_index][7:4], ssd1);
-    SSD uut32 (uut2.register[register_index][11:8], ssd2);
-    SSD uut33 (uut2.register[register_index][15:12], ssd3);
+    SSD uut30 ((pc_read) ? pc_out[3:0] : uut2.register[register_index][3:0], ssd0);
+    SSD uut31 ((pc_read) ? pc_out[7:4] : uut2.register[register_index][7:4], ssd1);
+    SSD uut32 ((pc_read) ? pc_out[11:8] : uut2.register[register_index][11:8], ssd2);
+    SSD uut33 ((pc_read) ? pc_out[15:12] : uut2.register[register_index][15:12], ssd3);
     always @ (posedge clk_500Hz) begin
         case (a)
             4'b0111: ssd = ssd0;
@@ -82,6 +83,7 @@ module top(
 
     // IF
     PC uut (clk, reset, pc_write, pc_next, pc_IF);
+    RealPC uut38 (pc_IF, pc_out);
     InstrMem uut0 (pc_IF, instruction_IF);
 
     // ID
@@ -90,22 +92,25 @@ module top(
     Mux32bit uut25 (read_data_2_ID_copy, ALU_result_EX, rs2_src, read_data_2_ID);
     ImmGen uut3 (instruction_ID, immediate_ID);
 
-    LoadHazard uut24 (memRead_EX, (instruction_ID[6:0] == 7'b0100011), rd_EX, instruction_ID[19:15], instruction_ID[24:20], control_src, pc_write, IF_ID_write);
+    LoadHazard uut24 ((instruction_ID[6:0] == 7'b1100011), regWrite_EX, memRead_EX, memRead_MEM, (instruction_ID[6:0] == 7'b0100011), rd_EX, rd_MEM, instruction_ID[19:15], instruction_ID[24:20], control_src, pc_write, IF_ID_write);
+
+    /* PC related */
+    AlterPC uut4 (pc_ID, immediate_ID, alter_destination_ID);
+    Jump uut8 (jump_ID, pcSrc_jump);
+    JumpReturn uut9 (jump_return_ID, pcSrc);
+    Mux32bit uut10 (pc_IF + 1, alter_destination_ID, pcSrc_branch, pc_branch);
+    Mux32bit uut11 (pc_branch, alter_destination_ID, pcSrc_jump, pc_jump);
+    Mux32bit uut12 (pc_jump, (read_data_1_ID >> 2), pcSrc, pc_next);
+    SelPC uut13 (zero_BR, lt_zero_BR, bType_ID, branch_ID, pcSrc_branch);
+    Mux2_32bit uut36 (read_data_1, write_data, ALU_result_MEM, forward_A_comp, comp_in_1);
+    Mux2_32bit uut37 (read_data_2_ID_copy, write_data, ALU_result_MEM, forward_B_comp, comp_in_2);
+    Comparator uut34 (comp_in_1, comp_in_2, zero_BR, lt_zero_BR);
+    BranchCheck uut35({instruction_ID[30], instruction_ID[14:12]}, ALUop_ID, bType_ID);
+    /* PC related */
 
     // EX
-
-    /* PC related */
-    AlterPC uut4 (pc_EX, immediate_EX, alter_destination_EX);
-    Jump uut8 (jump_EX, pcSrc_jump);
-    JumpReturn uut9 (jump_return_EX, pcSrc);
-    Mux32bit uut10 (pc_IF + 1, alter_destination_EX, pcSrc_branch, pc_branch);
-    Mux32bit uut11 (pc_branch, alter_destination_EX, pcSrc_jump, pc_jump);
-    Mux32bit uut12 (pc_jump, (ALU_result_EX >> 2), pcSrc, pc_next);
-    SelPC uut13 (zero_EX, lt_zero_EX, bType_EX, branch_EX, pcSrc_branch);
-    /* PC related */
-
     IF_FLUSH uut28 (pcSrc_jump, pcSrc, pcSrc_branch, flush);
-    Forward uut23 (regWrite_MEM, regWrite_WB, memWrite_EX, rd_MEM, rd_WB, rs1_EX, rs2_EX, forward_A, forward_B);
+    Forward uut23 ((instruction_ID[6:0] == 7'b1100011), regWrite_MEM, regWrite_WB, memWrite_EX, rd_MEM, rd_WB, rs1_EX, rs2_EX, instruction_ID[19:15], instruction_ID[24:20], forward_A, forward_B, forward_A_comp, forward_B_comp);
     SaveHazard uut26 (memWrite_ID, rd_EX, instruction_ID[24:20], rs2_src);
 
     ALUcontrol uut5 (funct3_EX, ALUop_EX, ALUctrl, bType_EX, asByte_EX, asUnsigned_EX);
