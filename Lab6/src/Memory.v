@@ -22,31 +22,23 @@
 
 module Memory(
     input write_en,
-    input [9:0] addr_0,
-    input [9:0] addr_1,
-    input [9:0] addr_2,
-    input [9:0] addr_3,
-    input [31:0] write_data_0,
-    input [31:0] write_data_1,
-    input [31:0] write_data_2,
-    input [31:0] write_data_3,
-    output [31:0] read_data_0,
-    output [31:0] read_data_1,
-    output [31:0] read_data_2,
-    output [31:0] read_data_3
+    input [9:0] addr,
+    input [31:0] write_data,
+    output reg [31:0] read_data,
+    output reg mem_done
 
 );
     reg [31:0] mem [255:0];
     always @ (*) begin
         if (write_en) begin
-            mem[(addr_0 >> 2)] <= write_data_0;
-            mem[(addr_1 >> 2)] <= write_data_1;
-            mem[(addr_2 >> 2)] <= write_data_2;
-            mem[(addr_3 >> 2)] <= write_data_3;
+            mem[(addr >> 2)] = write_data;
+            mem_done = 1'b1;
+            #1 mem_done = 1'b0;
+        end
+        else if (write_en == 1'b0) begin
+            read_data = mem[(addr >> 2)];
+            mem_done = 1'b1;
+            #1 mem_done = 1'b0;
         end
     end
-    assign read_data_0 = mem[(addr_0 >> 2)];
-    assign read_data_1 = mem[(addr_1 >> 2)];
-    assign read_data_2 = mem[(addr_2 >> 2)];
-    assign read_data_3 = mem[(addr_3 >> 2)];
 endmodule : Memory

@@ -21,26 +21,16 @@
 
 
 module Cache(
-    input cpu_request,
     input [9:0] addr_in,
     input [31:0] write_data_in,
     input r_w_type_in,
-    input [31:0] read_data_in_0,
-    input [31:0] read_data_in_1,
-    input [31:0] read_data_in_2,
-    input [31:0] read_data_in_3,
+    input [31:0] read_data_in,
     input mem_done,
     output reg [31:0] read_data_out,
     output reg hit,
     output reg r_w_type_out,
-    output [9:0] addr_out_0,
-    output [9:0] addr_out_1,
-    output [9:0] addr_out_2,
-    output [9:0] addr_out_3,
-    output reg [31:0] write_data_out_0,
-    output reg [31:0] write_data_out_1,
-    output reg [31:0] write_data_out_2,
-    output reg [31:0] write_data_out_3
+    output reg [9:0] addr_out,
+    output reg [31:0] write_data_out
 
 );
     reg valid [3:0];
@@ -56,51 +46,87 @@ module Cache(
         for (i = 0; i < 4; i = i + 1) dirty[i] <= 1'b0;
         for (i = 0; i < 4; i = i + 1) tag[i] <= 4'b0;
         for (i = 0; i < 16; i = i + 1) data[i] <= 32'b0;
+        r_w_type_out <= 1'b0;
     end
     always @ (*) begin
-        if (cpu_request) begin
+        // #1
+        if (mem_done == 1'b0) begin
             /* Hit */
             if ((valid[index] == 1'b1) && (tag[index] == data_tag)) begin
-                hit <= 1'b1;
-                if (r_w_type_in == 1'b0)    // Read from cache
-                    read_data_out <= data[(index * 4) + offset];
+                hit = 1'b1;
+                if (r_w_type_in == 1'b0) begin    // Read from cache
+                    read_data_out = data[(index * 4) + offset];
+                    $display("data[%d] = %d", (index * 4) + offset, data[(index * 4) + offset]);
+                    // addr_out_0 = {(addr_in >> 4), 4'b0000};
+                    // addr_out_1 = {(addr_in >> 4), 4'b0100};
+                    // addr_out_2 = {(addr_in >> 4), 4'b1000};
+                    // addr_out_3 = {(addr_in >> 4), 4'b1100};
+                end
                 else begin          // Write to cache
-                    data[(index * 4) + offset] <= write_data_in;
-                    dirty[index] <= 1'b1;
+                    data[(index * 4) + offset] = write_data_in;
+                    $display("Write fuck %h to %d", write_data_in, data[(index * 4) + offset]);
+                    // if (mem_done == 1'b0)
+                    dirty[index] = 1'b1;
                 end
             end
             /* Miss */
             else begin
-                hit <= 1'b0;
+                hit = 1'b0;
                 /* Write back */
                 if (dirty[index]) begin
-                    r_w_type_out <= 1'b1;
-                    write_data_out_0 <= data[(index * 4)];
-                    write_data_out_1 <= data[(index * 4) + 1];
-                    write_data_out_2 <= data[(index * 4) + 2];
-                    write_data_out_3 <= data[(index * 4) + 3];
+                    r_w_type_out = 1'b0;
+                    addr_out = {tag[index], index, 4'b0000};
+                    // write_data_out = data[(index * 4) + ((addr_out / 4) % 4)];
+                    // r_w_type_out = 1'b1;
+                    
+                end
+                else begin
+                    addr_out = {(addr_in >> 4), 4'b0000};
+                    // addr_out_1 = {(addr_in >> 4), 4'b0100};
+                    // addr_out_2 = {(addr_in >> 4), 4'b1000};
+                    // addr_out_3 = {(addr_in >> 4), 4'b1100};
+                    
                 end
             end
         end
         /* Wait for memory access */
-        else if (mem_done) begin
+        else if (mem_done == 1'b1) begin
+            // if (r_w_type_in == 1'b0) begin
+            if (dirty[index]) begin
+                for (i = 0; i < 4; i = i + 1) begin
+                    #1 addr_out = (addr_out / 16) * 16 + (i * 4);
+                    write_data_out = data[(index * 4) + ((addr_out / 4) % 4)];
+                    r_w_type_out = 1'b1;
+                    // #1 data[(index * 4) + ((addr_out / 4) % 4)] = read_data_in;
+                end
+            end
             /* Read from memory */
-            r_w_type_out <= 1'b0;
-            data[(index * 4)] <= read_data_in_0;
-            data[(index * 4) + 1] <= read_data_in_1;
-            data[(index * 4) + 2] <= read_data_in_2;
-            data[(index * 4) + 3] <= read_data_in_3;
+            #1 for (i = 0; i < 4; i = i + 1) begin
+                r_w_type_out = 1'b0;
+                addr_out = (addr_in / 16) * 16 + (i * 4);
+                #1 data[(index * 4) + ((addr_out / 4) % 4)] = read_data_in;
+            end
+            valid[index] = 1'b1;
+            dirty[index] = 1'b0;
             /* Update information */
-            valid[index] <= 1'b1;
-            tag[index] <= data_tag;
-            dirty[index] <= 1'b0;
+            tag[index] = data_tag;
+        // end
+        // else if (r_w_type_in == 1'b1) begin
+            // if ((addr_out & 4'b1111) == 4'b1100) begin
+            //     valid[index] = 1'b1;
+            //     dirty[index] = 1'b0;
+            // end
+            // else begin
+            //     addr_out = addr_out + 4;
+            //     valid[index] = 1'b0;
+            // end
+            // r_w_type_out = 1'b0;
+            // data[(index * 4) + ((addr_out / 4) % 4)] = read_data_in;
+            // write_data_out = data[(index * 4)];
+        // end
         end
     end
     assign index = ((addr_in >> 4) & 3);
     assign data_tag = (addr_in >> 6);
     assign offset = ((addr_in >> 2) & 3);
-    assign addr_out_0 = (dirty[index]) ? addr_out_0 : {tag[index], index, 4'b0000};
-    assign addr_out_1 = (dirty[index]) ? addr_out_1 : {tag[index], index, 4'b0100};
-    assign addr_out_2 = (dirty[index]) ? addr_out_2 : {tag[index], index, 4'b1000};
-    assign addr_out_3 = (dirty[index]) ? addr_out_3 : {tag[index], index, 4'b1100};
 endmodule : Cache
