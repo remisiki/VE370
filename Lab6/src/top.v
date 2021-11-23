@@ -60,19 +60,15 @@ module CPU (
         // read_write_test[5] = 0; address_test[5] = (8'd27 << 2); write_data_test[5] = 0;
         read_write_test[5] = 1; address_test[5] = (8'd21 << 2); write_data_test[5] = 32'h810;
         read_write_test[6] = 0; address_test[6] = (8'd10 << 2); write_data_test[6] = 0;
-        read_write_test[7] = 0; address_test[7] = (8'd4 << 2); write_data_test[7] = 0;
-        // read_write_test[8] = 0; address_test[8] = (8'd11 << 2); write_data_test[8] = 0;
-        // read_write_test[1] = 1; address_test[1] = 10'b0110010100; write_data_test[1] = 10'hfac;
-        // read_write_test[2] = 0; address_test[2] = 10'b0110010101; write_data_test[2] = 0;
-        // read_write_test[3] = 0; address_test[3] = 10'b0101010100; write_data_test[3] = 0;
-        // read_write_test[4] = 0; address_test[4] = 10'b0110010101; write_data_test[4] = 0;
+        read_write_test[7] = 1; address_test[7] = (11 * 4 + 2); write_data_test[7] = 32'h17;
+        read_write_test[8] = 0; address_test[8] = (8'd24 << 2); write_data_test[8] = 0;
         /* add lines if necessary */
         
         
     end
     always @(posedge clk) begin
         if (hit) request_num <= request_num + 1;
-        // else request_num <= request_num;
+        else request_num <= request_num;
     end
     assign address      = address_test[request_num];
     assign r_w_type   = read_write_test[request_num];
