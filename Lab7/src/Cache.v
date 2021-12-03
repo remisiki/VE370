@@ -54,6 +54,7 @@ module Cache(
         for (i = 0; i < 4; i = i + 1) tag[i] <= 5'b0;
         for (i = 0; i < 16; i = i + 1) data[i] <= 32'b0;
         r_w_type_out <= 1'b0;
+        addr_out <= 10'b0;
     end
     always @ (*) begin
         if (mem_done == 1'b0) begin
@@ -112,6 +113,7 @@ module Cache(
                 else begin
                     /* Directly overwrite */
                     addr_out = {(addr_in >> 4), 4'b0000};
+                    $display("addrout %d",addr_out);
                 end
             end
         end
@@ -126,7 +128,7 @@ module Cache(
                 end
             end
             /* Read from memory */
-            #1 for (i = 0; i < 4; i = i + 1) begin
+            #2 for (i = 0; i < 4; i = i + 1) begin
                 r_w_type_out = 1'b0;
                 addr_out = (addr_in / 16) * 16 + (i * 4);
                 #1 data[(flatten_index * 4) + ((addr_out / 4) % 4)] = read_data_in;
