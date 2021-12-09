@@ -24,11 +24,13 @@ module TLB(
     input [5:0] virtual_page_number,
     input page_hit,
     input [1:0] physical_page_number_in,    // Read from page table when miss
+    input r_w_type,
     output reg [1:0] physical_page_number_out,   // Output to cache
     output reg page_fault
 
 );
     reg valid [3:0];
+    reg dirty [3:0];
     reg [1:0] reference [3:0];
     reg [5:0] tag [3:0];
     reg [1:0] physical_page_number [3:0];
@@ -36,6 +38,7 @@ module TLB(
     integer i, j;
     initial begin
         for (i = 0; i < 4; i = i + 1) valid[i] <= 1'b0;
+        for (i = 0; i < 4; i = i + 1) dirty[i] <= 1'b0;
         for (i = 0; i < 4; i = i + 1) tag[i] <= 6'b0;
         for (i = 0; i < 4; i = i + 1) physical_page_number[i] <= 2'b0;
         for (i = 0; i < 4; i = i + 1) reference[i] <= 2'b0;
@@ -57,6 +60,7 @@ module TLB(
                         reference[j] = reference[j] - 1;
                     end
                 end
+                dirty[i] = r_w_type;
             end
         end
         #1 if (hit == 1'b0) begin

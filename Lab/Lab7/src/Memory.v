@@ -31,7 +31,7 @@ module Memory(
     output page_hit
 
 );
-    reg [31:0] mem [255:0];
+    reg [31:0] mem [319:0];
     reg valid [63:0];
     integer i;
     initial begin
@@ -51,6 +51,6 @@ module Memory(
             #1 mem_done = 1'b0;
         end
     end
-    assign physical_page_number = mem[virtual_page_number + 192][1:0];
+    assign physical_page_number = mem[virtual_page_number + 256][1:0];
     assign page_hit = valid[virtual_page_number];
 endmodule : Memory

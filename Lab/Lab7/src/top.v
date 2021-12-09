@@ -34,7 +34,7 @@ module top(
     wire [9:0] addr_bus;
     wire [31:0] write_bus;
     wire r_w_type_mem, r_w_type;
-    TLB uut3 (addr[13:8], page_hit, physical_page_number_in, physical_page_number_out, page_fault);
+    TLB uut3 (addr[13:8], page_hit, physical_page_number_in, r_w_type, physical_page_number_out, page_fault);
     Cache uut0 ({physical_page_number_out, addr[7:0]}, write_data, r_w_type, read_bus, mem_done, read_data, hit, r_w_type_mem, addr_bus, write_bus);
     Memory uut2 (r_w_type_mem, addr_bus, write_bus, addr[13:8], read_bus, mem_done, physical_page_number_in, page_hit);
     CPU uut1 (clk, hit, r_w_type, addr, write_data);
